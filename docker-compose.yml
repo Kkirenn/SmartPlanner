@@ -1,0 +1,23 @@
+services:
+  smartplanner:
+    image: smartplanner
+    build:
+      context: .
+      dockerfile: SmartPlanner/Dockerfile
+    container_name: smartplanner-backend
+    ports:
+      - "5058:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+
+  frontend:
+    image: smartplanner-frontend
+    build:
+      context: ./frontendplanner
+      dockerfile: Dockerfile
+    container_name: smartplanner-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - smartplanner
