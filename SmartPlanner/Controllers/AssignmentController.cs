@@ -28,7 +28,11 @@ namespace SmartPlanner.Controllers
         [HttpGet("unassigned")]
         public async Task<IActionResult> GetUnassigned()
         {
-            var tasks = await _assignment.GetUnassignedTasksAsync();
+            var leaderId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(leaderId))
+                return Unauthorized();
+
+            var tasks = await _assignment.GetUnassignedTasksAsync(Guid.Parse(leaderId));
             return Ok(tasks);
         }
 
@@ -36,10 +40,15 @@ namespace SmartPlanner.Controllers
         [HttpPost("{taskId}/assign/{devId}")]
         public async Task<IActionResult> AssignToDeveloper(Guid taskId, Guid devId)
         {
-            var result = await _assignment.AssignToDeveloperAsync(taskId, devId);
+            var leaderId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(leaderId))
+                return Unauthorized();
+
+            var result = await _assignment.AssignToDeveloperAsync(taskId, devId, Guid.Parse(leaderId));
 
             if (!result)
-                return NotFound(new { message = "Task or Developer not found" });
+                return NotFound(new { message = "Task or Developer not found, or you don't have permission" });
 
             return Ok(new { message = "Task assigned successfully" });
         }

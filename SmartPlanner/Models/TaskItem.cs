@@ -11,5 +11,7 @@
 
         public DateTime CreatedAt { get; set; }
         public DateTime? CompletedAt { get; set; }
+        public Guid? CreatedByLeaderId { get; set; }
+        public Developer? CreatedByLeader { get; set; }
     }
 }

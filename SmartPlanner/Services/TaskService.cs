@@ -13,14 +13,15 @@ namespace SmartPlanner.Services
             _db = db;
         }
 
-        public async Task<Guid> Create(string title, int storyPoints)
+        public async Task<Guid> Create(string title, int storyPoints, Guid? createdByLeaderId = null)
         {
             var task = new TaskItem
             {
                 Id = Guid.NewGuid(),
                 Title = title,
                 StoryPoints = storyPoints,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                CreatedByLeaderId = createdByLeaderId
             };
 
             _db.Tasks.Add(task);
@@ -42,6 +43,13 @@ namespace SmartPlanner.Services
         public async Task<List<TaskItem>> GetAll()
         {
             return await _db.Tasks.ToListAsync();
+        }
+
+        public async Task<List<TaskItem>> GetByLeaderIdAsync(Guid leaderId)
+        {
+            return await _db.Tasks
+                .Where(t => t.CreatedByLeaderId == leaderId)
+                .ToListAsync();
         }
     }
 }

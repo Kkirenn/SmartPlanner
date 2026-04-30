@@ -20,13 +20,23 @@ function App() {
 
     const isLeader = user?.role === "Leader";
     const isDeveloper = user?.role === "Developer";
+    const isAuthenticated = !!token && !!user;
 
-    const ProtectedRoute = ({ children, allowedRoles }: { children: React.ReactNode; allowedRoles: string[] }) => {
-        if (!token || !user) {
+    const ProtectedRoute = ({ 
+        children, 
+        allowedRoles 
+    }: { 
+        children: React.ReactNode; 
+        allowedRoles: string[];
+    }) => {
+        if (!isAuthenticated) {
             return <Navigate to="/" replace />;
         }
-        if (!allowedRoles.includes(user.role)) {
-            if (user.role === "Developer") {
+        if (!allowedRoles.includes(user?.role)) {
+            if (user?.role === "Leader") {
+                return <Navigate to="/leader" replace />;
+            }
+            if (user?.role === "Developer") {
                 return <Navigate to="/dev" replace />;
             }
             return <Navigate to="/" replace />;
@@ -34,12 +44,24 @@ function App() {
         return <>{children}</>;
     };
 
+    const PublicRoute = ({ children }: { children: React.ReactNode }) => {
+        if (isAuthenticated) {
+            if (isLeader) {
+                return <Navigate to="/leader" replace />;
+            }
+            if (isDeveloper) {
+                return <Navigate to="/dev" replace />;
+            }
+        }
+        return <>{children}</>;
+    };
+
     if (loading) {
         return (
-            <div style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+            <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                alignItems: "center", 
                 height: "100vh",
                 backgroundColor: "#16171d",
                 color: "#fff"
@@ -51,7 +73,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            {token && user && (
+            {isAuthenticated && (
                 <nav style={{
                     display: "flex",
                     gap: "20px",
@@ -60,15 +82,14 @@ function App() {
                     borderBottom: "1px solid #444"
                 }}>
                     {isLeader && (
-                        <Link to="/leader" style={{ color: "#c084fc", textDecoration: "none" }}>
-                            Team Management
-                        </Link>
-                    )}
-
-                    {isLeader && (
-                        <Link to="/tasks" style={{ color: "#c084fc", textDecoration: "none" }}>
-                            Tasks
-                        </Link>
+                        <>
+                            <Link to="/leader" style={{ color: "#c084fc", textDecoration: "none" }}>
+                                Team Management
+                            </Link>
+                            <Link to="/tasks" style={{ color: "#c084fc", textDecoration: "none" }}>
+                                Tasks
+                            </Link>
+                        </>
                     )}
 
                     {isDeveloper && (
@@ -76,7 +97,7 @@ function App() {
                             My Tasks
                         </Link>
                     )}
-
+                    
                     <button
                         onClick={() => {
                             localStorage.removeItem("token");
@@ -99,34 +120,44 @@ function App() {
             )}
 
             <Routes>
-                <Route path="/" element={<LoginPage />} />
-                <Route
-                    path="/leader"
+                <Route 
+                    path="/" 
+                    element={
+                        <PublicRoute>
+                            <LoginPage />
+                        </PublicRoute>
+                    } 
+                />
+                
+                <Route 
+                    path="/leader" 
                     element={
                         <ProtectedRoute allowedRoles={["Leader"]}>
                             <LeaderPage />
                         </ProtectedRoute>
-                    }
+                    } 
                 />
-
-                <Route
-                    path="/tasks"
+                
+                <Route 
+                    path="/tasks" 
                     element={
                         <ProtectedRoute allowedRoles={["Leader"]}>
                             <TasksPage />
                         </ProtectedRoute>
-                    }
+                    } 
                 />
-
-                <Route
-                    path="/dev"
+                
+                <Route 
+                    path="/dev" 
                     element={
                         <ProtectedRoute allowedRoles={["Leader", "Developer"]}>
                             <DeveloperPage />
                         </ProtectedRoute>
-                    }
+                    } 
                 />
+                
                 <Route path="/developers" element={<Navigate to="/leader" replace />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
     );

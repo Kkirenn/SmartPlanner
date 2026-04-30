@@ -13,7 +13,7 @@ namespace SmartPlanner.Services
             _db = db;
         }
 
-        public async Task<Developer> CreateAsync(string name, string email, string password, UserRole role)
+        public async Task<Developer> CreateAsync(string name, string email, string password, UserRole role, Guid? createdByLeaderId = null)
         {
             var developer = new Developer
             {
@@ -21,7 +21,8 @@ namespace SmartPlanner.Services
                 Name = name,
                 Email = email,
                 Password = password,
-                Role = role
+                Role = role,
+                CreatedByLeaderId = createdByLeaderId
             };
 
             _db.Developers.Add(developer);
@@ -37,6 +38,13 @@ namespace SmartPlanner.Services
         public async Task<Developer?> GetByIdAsync(Guid id)
         {
             return await _db.Developers.FindAsync(id);
+        }
+
+        public async Task<List<Developer>> GetByLeaderIdAsync(Guid leaderId)
+        {
+            return await _db.Developers
+                .Where(d => d.CreatedByLeaderId == leaderId || d.Id == leaderId)
+                .ToListAsync();
         }
     }
 }

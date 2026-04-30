@@ -13,13 +13,17 @@ namespace SmartPlanner.Services
             _db = db;
         }
 
-        public async Task<bool> AssignToDeveloperAsync(Guid taskId, Guid devId)
+        public async Task<bool> AssignToDeveloperAsync(Guid taskId, Guid devId, Guid leaderId)
         {
-            var developer = await _db.Developers.FindAsync(devId);
-            if (developer == null) return false;
+            var task = await _db.Tasks.FirstOrDefaultAsync(t => t.Id == taskId && t.CreatedByLeaderId == leaderId);
 
-            var task = await _db.Tasks.FindAsync(taskId);
-            if (task == null) return false;
+            if (task == null)
+                return false;
+
+            var developer = await _db.Developers.FirstOrDefaultAsync(d => d.Id == devId && d.CreatedByLeaderId == leaderId);
+
+            if (developer == null)
+                return false;
 
             task.AssigneeId = devId;
             await _db.SaveChangesAsync();
@@ -35,6 +39,13 @@ namespace SmartPlanner.Services
         {
             return await _db.Tasks
                 .Where(t => t.AssigneeId == null)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<TaskItem>> GetUnassignedTasksAsync(Guid leaderId)
+        {
+            return await _db.Tasks
+                .Where(t => t.AssigneeId == null && t.CreatedByLeaderId == leaderId)
                 .ToListAsync();
         }
 

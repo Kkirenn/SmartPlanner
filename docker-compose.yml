@@ -1,4 +1,23 @@
 services:
+  postgres:
+    image: postgres:15
+    container_name: smartplanner-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   smartplanner:
     image: smartplanner
     build:
@@ -7,9 +26,15 @@ services:
     container_name: smartplanner-backend
     ports:
       - "5058:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=${DB_CONNECTION}
       - ASPNETCORE_URLS=http://+:80
+      - Jwt__Key=${JWT_KEY}
+    networks:
+      - app-network
 
   frontend:
     image: smartplanner-frontend
@@ -21,3 +46,12 @@ services:
       - "5173:80"
     depends_on:
       - smartplanner
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

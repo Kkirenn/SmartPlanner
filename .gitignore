@@ -1,0 +1,49 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET
+packages/
+*.nupkg
+**/Migrations/
+
+# Frontend
+frontendplanner/node_modules/
+frontendplanner/dist/
+frontendplanner/.env
+frontendplanner/src/.gitignore
+
+# Backend
+SmartPlanner/bin/
+SmartPlanner/obj/
+SmartPlanner/appsettings.Development.json
+SmartPlanner/secrets.json
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Secrets (ВАЖНО!)
+.env
+*.env
+!*.env.example
+secrets/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Testing
+coverage/
+TestResults/".env" 

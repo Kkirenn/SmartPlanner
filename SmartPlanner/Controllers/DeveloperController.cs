@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SmartPlanner.DTO;
 using SmartPlanner.Services;
+using System.Security.Claims;
 
 namespace SmartPlanner.Controllers
 {
@@ -20,23 +21,34 @@ namespace SmartPlanner.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateDeveloperRequest request)
         {
+            var leaderId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(leaderId))
+                return Unauthorized("Leader ID not found");
+
             var developer = await _developerService.CreateAsync(
                 request.Name,
                 request.Email,
                 request.Password,
-                request.Role
-                );
+                request.Role,
+                Guid.Parse(leaderId)
+            );
 
             return Ok(developer);
         }
+
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var developers = await _developerService.GetAllAsync();
+            var leaderId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(leaderId))
+                return Unauthorized("User ID not found");
+
+            var developers = await _developerService.GetByLeaderIdAsync(Guid.Parse(leaderId));
             return Ok(developers);
         }
-
 
         [Authorize]
         [HttpGet("{id}")]
