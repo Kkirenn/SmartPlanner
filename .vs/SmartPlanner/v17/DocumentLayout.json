@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\kiren\\source\\repos\\smartplanner\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|c:\\users\\kiren\\source\\repos\\smartplanner\\smartplanner\\models\\developer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|solutionrelative:smartplanner\\models\\developer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\kiren\\source\\repos\\smartplanner\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|c:\\users\\kiren\\source\\repos\\smartplanner\\smartplanner\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|solutionrelative:smartplanner\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|c:\\users\\kiren\\source\\repos\\smartplanner\\smartplanner\\controllers\\assignmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -81,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|c:\\users\\kiren\\source\\repos\\smartplanner\\smartplanner\\dto\\createdeveloperrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|solutionrelative:smartplanner\\dto\\createdeveloperrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|c:\\users\\kiren\\source\\repos\\smartplanner\\smartplanner\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED7AEBEB-E9F4-4264-8180-7D504F1EEAA0}|SmartPlanner\\SmartPlanner.csproj|solutionrelative:smartplanner\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kiren\\Desktop\\SmartPlannerNew\\SmartPlanner\\Models\\Developer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -256,23 +256,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T22:23:51.279Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Dockerfile",
               "RelativeDocumentMoniker": "SmartPlanner\\Dockerfile",
@@ -284,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\appsettings.json",
               "RelativeDocumentMoniker": "SmartPlanner\\appsettings.json",
@@ -296,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AssignmentController.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Controllers\\AssignmentController.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Controllers\\AssignmentController.cs",
@@ -308,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AssignmentService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\AssignmentService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\AssignmentService.cs",
@@ -320,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IAssignmentService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\IAssignmentService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\IAssignmentService.cs",
@@ -332,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Developer.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Models\\Developer.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Models\\Developer.cs",
@@ -345,20 +337,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": ".dockerignore",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\.dockerignore",
               "RelativeDocumentMoniker": ".dockerignore",
               "ToolTip": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\.dockerignore",
               "RelativeToolTip": ".dockerignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-04-04T22:30:20.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Models\\TaskItem.cs",
+              "RelativeDocumentMoniker": "SmartPlanner\\Models\\TaskItem.cs",
+              "ToolTip": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Models\\TaskItem.cs",
+              "RelativeToolTip": "SmartPlanner\\Models\\TaskItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T18:03:19.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-04-03T22:23:51.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Program.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Program.cs",
@@ -370,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ITaskService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\ITaskService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\ITaskService.cs",
@@ -382,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "TaskService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\TaskService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\TaskService.cs",
@@ -394,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TaskController.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Controllers\\TaskController.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Controllers\\TaskController.cs",
@@ -406,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "DeveloperService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\DeveloperService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\DeveloperService.cs",
@@ -418,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IDeveloperService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\IDeveloperService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\IDeveloperService.cs",
@@ -430,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "DeveloperController.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Controllers\\DeveloperController.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Controllers\\DeveloperController.cs",
@@ -442,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Data\\AppDbContext.cs",
@@ -454,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\Services\\AuthService.cs",
@@ -466,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\DTO\\LoginRequest.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\DTO\\LoginRequest.cs",
@@ -478,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CreateTaskRequest.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\DTO\\CreateTaskRequest.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\DTO\\CreateTaskRequest.cs",
@@ -490,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CreateDeveloperRequest.cs",
               "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\DTO\\CreateDeveloperRequest.cs",
               "RelativeDocumentMoniker": "SmartPlanner\\DTO\\CreateDeveloperRequest.cs",
@@ -499,18 +515,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-08T22:32:56.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TaskItem.cs",
-              "DocumentMoniker": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Models\\TaskItem.cs",
-              "RelativeDocumentMoniker": "SmartPlanner\\Models\\TaskItem.cs",
-              "ToolTip": "C:\\Users\\Kiren\\source\\repos\\SmartPlanner\\SmartPlanner\\Models\\TaskItem.cs",
-              "RelativeToolTip": "SmartPlanner\\Models\\TaskItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T18:03:19.917Z"
             },
             {
               "$type": "Document",
