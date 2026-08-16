@@ -23,7 +23,7 @@ SmartPlanner is a full-stack web application designed for task scheduling and pe
 
 ---
 
-## 🚀 Key Features & Architecture
+## Key Features & Architecture
 
 * **Containerized Infrastructure:** The entire environment (backend, frontend, database, cache, and message broker) is orchestrated using Docker Compose for instant local deployment.
 * **Database Resiliency:** PostgreSQL integration includes a strict healthcheck policy (`pg_isready`) ensuring the backend only boots up once the database is fully operational.
